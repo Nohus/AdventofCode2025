@@ -205,6 +205,8 @@ data class Vector3(val x: Int, val y: Int, val z: Int) {
         }
         return adjacent
     }
+
+    fun distance(other: Vector3) = sqrt((x - other.x).toDouble().pow(2) + (y - other.y).toDouble().pow(2) + (z - other.z).toDouble().pow(2))
 }
 
 typealias VectorN<T> = List<T>
