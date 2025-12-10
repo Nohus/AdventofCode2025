@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation("tools.aqua:z3-turnkey:4.12.2")
 }
 
 kotlin {
