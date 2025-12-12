@@ -125,11 +125,17 @@ fun <T> Map<Point, T>.printArea(visualization: (T) -> Char = { it.toString()[0] 
 }
 
 fun <T> Map<Point, T>.getWidth(): Int {
-    return maxOf { it.key.x } + 1
+    if (isEmpty()) return 0
+    val min = keys.minOf { it.x }
+    val max = keys.maxOf { it.x }
+    return max - min + 1
 }
 
 fun <T> Map<Point, T>.getHeight(): Int {
-    return maxOf { it.key.y } + 1
+    if (isEmpty()) return 0
+    val min = keys.minOf { it.y }
+    val max = keys.maxOf { it.y }
+    return max - min + 1
 }
 
 fun <T> Map<Point, T>.getXRange(): IntRange {
